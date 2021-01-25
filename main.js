@@ -1,23 +1,21 @@
-const testimonies = document.querySelectorAll('.testimony');
-const authorImg = document.querySelector('#authorImg')
+// hide the other slide
 
-const names = ['images/image-tanya.jpg', 'images/image-john.jpg']
+const slides = document.querySelectorAll('.slide-container');
 
-let current = 0;
-authorImg.setAttribute('src', names[current])
+//slides[1].setAttribute('style', 'transform: translate(200%)');
 
-const nextBtn = document.querySelector('.next')
-const prevBtn = document.querySelector('.prev')
 
-nextBtn.addEventListener('click', showHide);
-prevBtn.addEventListener('click', showHide);
+const prevBtn = document.querySelectorAll('.fa-chevron-left')
+const nextBtn = document.querySelectorAll('.fa-chevron-right')
 
-function showHide(){  
-    current < names.length -1 
-    ? current++      
-    :current = 0
+prevBtn.forEach( btn => btn.addEventListener('click', prevSlide))
+nextBtn.forEach( btn => btn.addEventListener('click', nextSlide))
 
-    authorImg.setAttribute('src', names[current])
-
-    testimonies.forEach( node => node.classList.toggle('hide'))
+function prevSlide() {
+  slides[0].setAttribute('style', 'transform: translate(0%)');
+  slides[1].setAttribute('style', 'transform: translate(400%)');
+}
+function nextSlide() {
+  slides[0].setAttribute('style', 'transform: translate(400%)');
+  slides[1].setAttribute('style', 'transform: translate(-300%)');
 }
