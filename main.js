@@ -9,13 +9,12 @@ nextBtn.forEach( btn => btn.addEventListener('click', changeSlide))
 
 function changeSlide() {
 
-  if (slide1.style.transform === 'translate(-120%)') {
+  if (slide1.style.transform === 'translate(-220%)') {
     slide1.setAttribute('style', 'visibility: visible;transform: translate(0%)');
-    slide2.setAttribute('style', 'visibility: visible;transform: translate(50%)');
+    slide2.setAttribute('style', 'visibility: visible;transform: translate(200%, -120%)');
 
   } else {
-    slide1.setAttribute('style', 'transform: translate(-120%)');
-    slide2.setAttribute('style', 'visibility: visible;transform: translate(-100%)');
-    
+    slide1.setAttribute('style', 'transform: translate(-220%)');
+    slide2.setAttribute('style', 'visibility: visible;transform: translate(0%, -125%)');    
   }
 }
