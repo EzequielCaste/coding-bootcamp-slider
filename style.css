@@ -29,12 +29,14 @@ body {
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: left bottom;
+  overflow: hidden;
 }
-.slide-container {
-  transition: all 1.5s ease-out;
+.slide-container, .slide {
+  transition: transform 1s ease-out;
 }
-.slide:nth-child(2) {
-  transform: translate(200%);
+#slide2 {
+  visibility: collapse;
+  transform: translate(50%);
 }
 .fas:hover {
   cursor: pointer;
@@ -95,8 +97,8 @@ section {
     justify-content: space-evenly;
   }
   .nav {
-    bottom: 54%;
-    left: 18%;
+    bottom: 53%;
+    left: 17%;
   }
   .img-container {
     background-image: url('images/pattern-bg.svg');
